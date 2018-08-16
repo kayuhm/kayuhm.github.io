@@ -4,14 +4,13 @@ from sys import argv
 
 N = argv[1]
 
-result = 0
-length = 0
-index = 0
+if (int(argv[1]) >= 0):
+    result = 0
 
-while (length != 1):
-    length = len(N)
-    index = 0
+    while (len(N) > 1):
+        result = 0
+        for element in str(N):
+            result = result + int(element)
+            N = str(result)
 
-    N = str(result)
-
-print(str(N))
+    print(N)
