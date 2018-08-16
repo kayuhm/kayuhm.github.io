@@ -10,7 +10,7 @@
             <ol>
                 <li>Exercise 1</li>
                 <ul>
-                    <li>fibonacci: <a href="cs11/fibonacci.py">code</a>&nbsp&nbsp|&nbsp&nbsp<a href="cs11/fibonacci.html">flowchart</a></li>
+                    <li>fibonacci: <a href="cs11/fib.py">code</a>&nbsp&nbsp|&nbsp&nbsp<a href="cs11/fibonacci.html">flowchart</a></li>
                 </ul>
             </ol>
         </ul>
