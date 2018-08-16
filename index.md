@@ -10,7 +10,7 @@
             <ol>
                 <li>Exercise 1</li>
                 <ul>
-                    <li>fibonacci: <a href="fibonacci.py">python code</a> <a href="fibonacci.html">flowchart</a></li>
+                    <li>fibonacci: <a href="fibonacci.py">code</a>&nbsp&nbsp|&nbsp&nbsp<a href="fibonacci.html">flowchart</a></li>
                 </ul>
             </ol>
         </ul>
