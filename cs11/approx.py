@@ -10,17 +10,19 @@ local_counter = 0
 expo_result = float(0)
 factorial_result = float(0)
 final_result = float(0)
-term_result = float(0)
-term_condition = float(1)
+term_result = float(1)
 
-while (term_condition > 0.000001):
+while (0.000001 < term_result or 
+term_result < 
+-0.000001):
     # solve for exponential result
     # reinitialize local_counter to 0
     local_counter = 0
     expo_result = float(1)
 
     if (counter > 0):
-        while (local_counter < counter):
+        while (local_counter < 
+counter):
             expo_result = expo_result * x
             local_counter = local_counter + 1
 
@@ -40,12 +42,6 @@ while (term_condition > 0.000001):
 
     term_result = float(expo_result / factorial_result)
     final_result = final_result + term_result
-
-    if (term_result < 0):
-        term_condition = term_result * -1
-    else:
-        term_condition = term_result
-
     counter =  counter + 1
 
 
