@@ -4,7 +4,7 @@ from sys import argv
 
 N = argv[1]
 
-if (int(argv[1]) >= 0):
+if (int(N) >= 0):
     result = 0
 
     while (len(N) > 1):
