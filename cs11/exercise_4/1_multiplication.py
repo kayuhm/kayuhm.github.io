@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+"""
+# ADVANCED VERSION
 n = int(input())
 curr = 1
 
@@ -18,3 +20,19 @@ else:
     
     curr = 1
     print('\n' * 2)
+"""
+
+#!/usr/bin/python3
+
+n = int(input())
+
+if (n <= 0):
+  pass
+else:
+  for i in range (1,n+1):
+      
+    for k in range(1,n+1):
+      print(i * k, end='\t')
+
+    print('\n')
+  
