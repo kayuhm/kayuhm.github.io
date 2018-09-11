@@ -16,12 +16,14 @@ def main():
         array.append(n)
     
     for element in array:
-      for i in range (1, element + 1):
-        for k in range(1, element + 1):
-          print(i * k, end='\t')
-        print('\n')
-      print('\n' * 2)
+      plot(element)
 
+def plot(dimension):
+  for i in range(1, dimension + 1):
+    for k in range(1, dimension + 1):
+      print(i * k, end='\t')
+    print('\n')
+  print('\n')
 
 
 if __name__ == "__main__":

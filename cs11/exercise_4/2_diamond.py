@@ -17,6 +17,7 @@ def main():
     
     for element in array:
       diamond(element)
+      print('\n')
 
 def diamond(side):
   mid = side
