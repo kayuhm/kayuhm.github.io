@@ -22,8 +22,6 @@ else:
     print('\n' * 2)
 """
 
-#!/usr/bin/python3
-
 n = int(input())
 
 if (n <= 0):
