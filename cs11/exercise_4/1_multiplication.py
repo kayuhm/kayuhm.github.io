@@ -1,36 +1,28 @@
 #!/usr/bin/python3
 
-"""
-# ADVANCED VERSION
-n = int(input())
-curr = 1
-
-if (n <= 0):
-  pass
-else:
-  for i in range (1,n+1):
-
-    for j in range (curr, i+1):
-        
-      for k in range(1,i+1):
-        print(curr * k, end='\t')
-
-      print('\n')
-      curr += 1
+def main():
+  t = int(input())
+  if t <= 0:
+    pass # temporary
+  else:
+    # variable declarations
+    array = []
+    n = 0
+    for i in range(t):
+      n = int(input())
+      if n <= 0:
+        return
+      else:
+        array.append(n)
     
-    curr = 1
-    print('\n' * 2)
-"""
+    for element in array:
+      for i in range (1, element + 1):
+        for k in range(1, element + 1):
+          print(i * k, end='\t')
+        print('\n')
+      print('\n' * 2)
 
-n = int(input())
 
-if (n <= 0):
-  pass
-else:
-  for i in range (1,n+1):
-      
-    for k in range(1,n+1):
-      print(i * k, end='\t')
 
-    print('\n')
-  
+if __name__ == "__main__":
+  main()
