@@ -2,9 +2,7 @@
 
 def main():
     t = int(input())
-    if t <= 0:
-        pass # temporary
-    else:
+    if t > 0:
         # variable declarations
         array = []
         s = 0
