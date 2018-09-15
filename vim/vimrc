@@ -1,0 +1,111 @@
+""" directory for plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree'
+Plug 'tomtom/tcomment_vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'editorconfig/editorconfig-vim'
+" Plug 'vim-syntastic/syntastic'
+Plug 'godlygeek/tabular'
+" Plug 'nightsense/carbonized'
+" Plug 'godlygeek/csapprox'
+Plug 'lifepillar/vim-solarized8'
+call plug#end()
+
+
+
+""" PLUGIN SETTINGS
+
+" nerdtree
+map <C-n> :NERDTreeToggle<CR>
+" autocmd VimEnter * NERDTree
+
+" tcomment
+noremap <silent> <Leader>cc :TComment<CR>
+
+
+" ctrlp
+" Leader F is for file related mappîngs (open, browse...) 
+nnoremap <silent> <Leader>f :CtrlP<CR>
+nnoremap <silent> <Leader>fm :CtrlPMRU<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ctrl B for buffer related mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <Leader>b :CtrlPBuffer<CR> " cycle between buffer
+nnoremap <silent> <Leader>bb :bn<CR> "create (N)ew buffer
+nnoremap <silent> <Leader>bd :bdelete<CR> "(D)elete the current buffer
+nnoremap <silent> <Leader>bu :bunload<CR> "(U)nload the current buffer
+nnoremap <silent> <Leader>bl :setnomodifiable<CR> " (L)ock the current buffer"
+
+
+" lightline
+
+" let g:lightline = { 'colorscheme': 'solarized8', }
+set laststatus=2                                                "vim-lightline
+set noshowmode                                                  "vim-lightline
+
+" polyglot
+
+
+" editorconfig
+
+
+" syntastic
+  
+" screen
+
+
+
+""" KEYBOARD MAPPINGS
+
+" sets the mapleader
+let mapleader = ","
+
+" sets <ESC> to jk
+inoremap jk <ESC>
+
+" make new lines with Enter in normal mode
+map <CR> o<ESC>k
+
+
+
+""" GENERAL CONFIGURATION
+
+" show line numbers
+set number
+
+" colorscheme
+set background=dark
+syntax enable
+set t_Co=256
+" colorscheme carbonized-dark
+colorscheme solarized8
+
+" tabs and spaces
+set tabstop=4 " width of tab is set to 4
+set shiftwidth=4 " indents will have a width of 4
+set softtabstop=4 " sets the number of columns for a tab
+set expandtab " expand tabs to spaces
+
+" make backspaces delete sensibly
+set backspace=indent,eol,start
+
+" autosaves buffer when switching between buffer
+set autowrite
+
+" configures how invisible characters are displayed
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+" ignores cases when search pattern is all lowercase
+set smartcase
+set ignorecase
+
+" stop spitting vim backup/swap file all over
+set backupdir=~/.vim/tmp/                   " for the backup files
+set directory=~/.vim/tmp/                   " for the swap files
+
+" allows sudo to write the file within vim
+cmap w!! %!sudo tee > /dev/null %
