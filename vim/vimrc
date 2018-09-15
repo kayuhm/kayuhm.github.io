@@ -12,7 +12,20 @@ Plug 'godlygeek/tabular'
 " Plug 'nightsense/carbonized'
 " Plug 'godlygeek/csapprox'
 Plug 'lifepillar/vim-solarized8'
+Plug 'majutsushi/tagbar'
 call plug#end()
+
+
+""" KEYBOARD MAPPINGS
+
+" sets the mapleader
+let mapleader = ","
+
+" sets <ESC> to jk
+inoremap jk <ESC>
+
+" make new lines with Enter in normal mode
+map <CR> o<ESC>k
 
 
 
@@ -23,7 +36,7 @@ map <C-n> :NERDTreeToggle<CR>
 " autocmd VimEnter * NERDTree
 
 " tcomment
-noremap <silent> <Leader>cc :TComment<CR>
+noremap <Leader>cc :TComment<CR>
 
 
 " ctrlp
@@ -55,24 +68,16 @@ set noshowmode                                                  "vim-lightline
 
 " syntastic
   
-" screen
 
-
-
-""" KEYBOARD MAPPINGS
-
-" sets the mapleader
-let mapleader = ","
-
-" sets <ESC> to jk
-inoremap jk <ESC>
-
-" make new lines with Enter in normal mode
-map <CR> o<ESC>k
-
-
+" tagbar with exuberant ctags
+nmap <C-b> :TagbarToggle<CR>
+let g:tagbar_width = 60
+"let g:tagbar_ctags_bin = '/usr/bin/ctags'
 
 """ GENERAL CONFIGURATION
+
+" set font
+" set guifont=Dejavu\ Sans\ Mono:h12
 
 " show line numbers
 set number
