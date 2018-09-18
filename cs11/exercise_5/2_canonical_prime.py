@@ -12,9 +12,7 @@ def main():
         for element in arrInput:
             canonicalPrime(element)
 
-        # DONT FORGET TO DEBUG THIS SHIT
-        # YO
-        # YO
+        
 
 def canonicalPrime(N):
     factor = 2
@@ -24,7 +22,7 @@ def canonicalPrime(N):
         if N % factor == 0:
             arr_factors.append(factor)
             N = N / factor
-            factor = 2
+            factor = 1
         if factor > limit:
             if N != 1:
                 arr_factors.append(int(N))
