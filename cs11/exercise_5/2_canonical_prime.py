@@ -1,4 +1,5 @@
 from math import ceil
+from collections import Counter
 
 def main():
     t = int(input())
@@ -11,7 +12,9 @@ def main():
         for element in arrInput:
             canonicalPrime(element)
 
-        
+        # DONT FORGET TO DEBUG THIS SHIT
+        # YO
+        # YO
 
 def canonicalPrime(N):
     factor = 2
@@ -27,9 +30,12 @@ def canonicalPrime(N):
                 arr_factors.append(int(N))
             break
         factor += 1
-    arr_factors.sort()element
-    print(arr_factors)
+    arr_factors.sort()
+    for p, a in Counter(arr_factors).items():
+        print("(" + str(p) + "^" + str(a) + ")", end="")
+    print()
 
 
 if __name__ == "__main__":
   main()
+
