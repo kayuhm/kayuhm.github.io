@@ -22,13 +22,13 @@ def polyAdd(P_POLY, Q_POLY):
     q_len = len(Q_POLY)
     if (p_len > q_len):
         for i in range(p_len - q_len):
-            if (P_POLY[-1] != 0):
+            if (int(P_POLY[-1]) != 0):
                 print(str(P_POLY.pop(p_len - 1)) + "x^" + str(p_deg), end=" + ")
             p_len -= 1
             p_deg -= 1
     else:
         for i in range(q_len - p_len):
-            if (Q_POLY[-1] != 0):
+            if (int(Q_POLY[-1]) != 0):
                 print(str(Q_POLY.pop(q_len - 1)) + "x^" + str(q_deg), end=" ")
             q_len -= 1
             q_deg -= 1
@@ -40,10 +40,6 @@ def polyAdd(P_POLY, Q_POLY):
             else:
                 print()
         p_deg -= 1
-
-        
-
-
 
 if __name__ == "__main__":
     main()
