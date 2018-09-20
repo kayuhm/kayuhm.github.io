@@ -48,10 +48,10 @@ def hist(BIN_SIZE, DATA_LIST):
 
 
     # debugging
-    # print(DATA_LIST)
-    # print(locFrequencyList)
+    print(DATA_LIST)
+    print(locFrequencyList)
     # print(locLowerBound)
-    # print(locHigherBound)
+    print(locHigherBound)
     # end debugging 
 
 
