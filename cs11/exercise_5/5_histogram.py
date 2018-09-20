@@ -33,7 +33,7 @@ def hist(BIN_SIZE, DATA_LIST):
     
     indexOfBounds = 0
     frequency = 0
-    while len(DATA_LIST) != 0:
+    while True:
         if locLowerBound[indexOfBounds] <= DATA_LIST[0] <= locHigherBound[indexOfBounds]:
             frequency += 1
             DATA_LIST.pop(0)
@@ -43,8 +43,8 @@ def hist(BIN_SIZE, DATA_LIST):
             indexOfBounds += 1
     
     # display result
-    for index in range(len(locFrequencyList)):
-        print(str(locLowerBound[index]) + "-" + str(locHigherBound[index]), str(locFrequencyList[index]))
+    # for index in range(len(locFrequencyList)):
+    #    print(str(locLowerBound[index]) + "-" + str(locHigherBound[index]), str(locFrequencyList[index]))
 
 
     # debugging
