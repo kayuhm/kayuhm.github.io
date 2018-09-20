@@ -26,6 +26,17 @@ def hist(BIN_SIZE, DATA_LIST):
         locLowerBound.append(locLowerBound[-1] + locBinSizeOffset)
         locHigherBound.append(locHigherBound[-1] + locBinSizeOffset)
 
+    frequency = 0
+    indexOfBounds = 0
+    for index in range(len(DATA_LIST) - 1):
+        if locLowerBound[indexOfBounds] < int(DATA_LIST[index]) < locHigherBound[indexOfBounds]:
+            frequency += 1
+        else:
+            locFrequency.append(frequency)
+            frequency = 0
+            indexOfBounds += 1
+
+
     # debugging
     print(DATA_LIST)
     print(locLowerBound)
