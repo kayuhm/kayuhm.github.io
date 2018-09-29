@@ -8,7 +8,7 @@ def main():
         n_array = []
         a = 0
         n = 0
-        for i in range(t):
+        for  i in range(t):
             a = int(input())
             if a < 0:
                 return

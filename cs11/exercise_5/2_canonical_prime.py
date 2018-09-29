@@ -1,3 +1,6 @@
+#- !/usr/bin/env python3
+# -*- coding: utf-8 -*
+
 from math import ceil
 from collections import Counter
 
@@ -30,7 +33,7 @@ def canonicalPrime(N):
         factor += 1
     arr_factors.sort()
     for p, a in Counter(arr_factors).items():
-        print("(" + str(p) + "^" + str(a) + ")", end="")
+        print("(" + str(p) + "^" + str(a) + ")", end = "")
     print()
 
 

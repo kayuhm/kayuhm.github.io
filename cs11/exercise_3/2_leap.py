@@ -3,7 +3,7 @@
 y = int(input())
 
 if (y < 1000):
-    print("INPUT TOO SMALL.")
+    print("INPUT TOO SMALL")
 else:
     if (y % 4 == 0):
         if (y % 100 == 0):

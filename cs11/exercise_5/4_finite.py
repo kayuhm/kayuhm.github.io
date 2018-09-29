@@ -19,15 +19,24 @@ def finite(ARRAY):
     if (len(ARRAY) == 1):
         print(str(ARRAY[0]))
     else:
-        local_prev = ARRAY.pop(0)
-        print(str(round(local_prev + recursive(ARRAY), 6))) # RECURSION
+        print(str(round(recursive(ARRAY), 6))) # RECURSION
+
+# def recursive(ARRAY):
+#     # debug
+#     print("begin:", str(ARRAY))
+#     if len(ARRAY) == 2:
+#         return (1 /(ARRAY[0] + ARRAY[1]))
+#     else:
+#         local_prev = ARRAY.pop(0)
+#         print("end:", str(ARRAY))
+#         return (1 / (local_prev + recursive(ARRAY)))
 
 def recursive(ARRAY):
-    if len(ARRAY) == 2:
-        return (1 /(ARRAY[0] + ARRAY[1]))
+    if len(ARRAY) == 1:
+        return ARRAY[0]
     else:
         local_prev = ARRAY.pop(0)
-        return (1 / (local_prev + recursive(ARRAY)))
+        return local_prev + (1 / recursive(ARRAY))
 
 if __name__ == "__main__":
     main()

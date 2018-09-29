@@ -1,58 +1,49 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
 def main():
     t = int(input())
-    if t <= 0:
-        # saved for error
-        pass
-    else:
-        b = []
-        data = []
-        for count in range(t):
-            b.append(int(input()))
-            data.append(input().split())
-        for index in range(len(b)):
-            hist(b[index], data[index])
-         
+    b = []
+    data = []
+    for count in range(t):
+        b.append(int(input()))
+        data.append(input().split())
+    for index in range(len(b)):
+        hist(b[index], data[index])
 
 def hist(BIN_SIZE, DATA_LIST):
-    # make all data in DATA_LIST an int
-    counter = 0
-    while counter < len(DATA_LIST):
-        DATA_LIST[counter] = int(DATA_LIST[counter])
-        counter += 1
-    DATA_LIST.sort()
-    locBinSizeOffset = int(BIN_SIZE) - 1
-    locLowerBound = [DATA_LIST[0]]
-    locHigherBound = [locLowerBound[0] + locBinSizeOffset + 1]
-    locFrequencyList = []
-
-    while (DATA_LIST[-1] > locHigherBound[-1]):
-        locLowerBound.append(locLowerBound[-1] + locBinSizeOffset)
-        locHigherBound.append(locHigherBound[-1] + locBinSizeOffset)
-    
-    indexOfBounds = 0
+    locBinSizeOffset = BIN_SIZE - 1
+    locDataList = []
+    locLowerBound = 0
+    locHigherBound = 0
     frequency = 0
-    while True:
-        if locLowerBound[indexOfBounds] <= DATA_LIST[0] <= locHigherBound[indexOfBounds]:
+    counter = 0
+
+    # converts all items in DATA_LIST into type 'int'
+    for element in DATA_LIST:
+        locDataList.append(int(element))
+
+    locDataList.sort()
+    locLowerBound = locDataList[0]
+    locHigherBound = locLowerBound + locBinSizeOffset
+
+
+    # ouputs the frequency table
+    while counter < len(locDataList):
+        # print("lower: " + str(locLowerBound))
+        # print("higher: " + str(locHigherBound))
+        # print("value: " + str(locDataList[counter]))
+        if locLowerBound <= locDataList[counter] <= locHigherBound:
             frequency += 1
-            DATA_LIST.pop(0)
+            counter += 1
+            if counter == len(locDataList):
+                print(str(locLowerBound) + "-" + str(locHigherBound), frequency)
         else:
-            locFrequencyList.append(frequency)
+            print(str(locLowerBound) + "-" + str(locHigherBound), frequency)
+            locLowerBound = locHigherBound + 1
+            locHigherBound = locLowerBound + locBinSizeOffset
             frequency = 0
-            indexOfBounds += 1
-    
-    # display result
-    # for index in range(len(locFrequencyList)):
-    #    print(str(locLowerBound[index]) + "-" + str(locHigherBound[index]), str(locFrequencyList[index]))
-
-
-    # debugging
-    print(DATA_LIST)
-    print(locFrequencyList)
-    # print(locLowerBound)
-    print(locHigherBound)
-    # end debugging 
+    print() # add line break before next set of outputs
 
 
 
