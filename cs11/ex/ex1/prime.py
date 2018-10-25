@@ -8,7 +8,7 @@ counter = 2
 local_counter = 0
 decision = "" # or not_prime
 
-while counter < N:
+while counter <= N:
     local_counter = 2
     decision = "prime"
     # print(counter)

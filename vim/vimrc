@@ -15,6 +15,8 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+" Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 
@@ -31,12 +33,17 @@ call plug#end()
 " emmet
 " ultisnips
 " solarized8 colorscheme
+" multip cursors
 
 
 """ KEYBOARD MAPPINGS
 
 " sets the mapleader
 let mapleader = ","
+
+" search all occurences then change
+vmap <Leader>g *:%s/<C-R>//
+map <Leader>g *:%s/<C-R>//
 
 " sets <ESC> to jk
 inoremap jk <ESC>
@@ -87,21 +94,34 @@ set noshowmode
 
 
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+"
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_python_checkers = ['flake8', 'python']
   
 
 " tagbar with exuberant ctags
 nmap <C-b> :TagbarToggle<CR>
 let g:tagbar_width = 60
 "let g:tagbar_ctags_bin = '/usr/bin/ctags'
+
+
+" ULTISNIPS
+set nocompatible
+filetype plugin indent on
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" VIM MULTIPLE CURSORS
+
+
 
 """ GENERAL CONFIGURATION
 
@@ -110,6 +130,11 @@ let g:tagbar_width = 60
 
 " show line numbers
 set number
+
+" highlight current line
+set cursorline
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 
 " colorscheme
 set background=dark
@@ -134,8 +159,8 @@ set autowrite
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " ignores cases when search pattern is all lowercase
-set smartcase
-set ignorecase
+" set smartcase
+" set ignorecase
 
 " stop spitting vim backup/swap file all over
 set backupdir=~/.vim/tmp/                   " for the backup files
