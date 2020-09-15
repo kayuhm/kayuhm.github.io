@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>mimin page</title>
+        <title>Kayuhm</title>
         <meta charset="utf-8">
     </head>
     <body>
